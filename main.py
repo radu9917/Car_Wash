@@ -15,16 +15,16 @@ car_wash2 = Car_Wash(2, "Always Clean", 0)
 car_wash3 = Car_Wash(3, "Wash It", 0)
 car_wash4 = Car_Wash(4, "Uncle Bob's Car Wash", 0)
 if option=="2":
-      print(car_wash1.name+" with "+str(car_wash1.cars)+ " cars queued\n")
-      print(car_wash2.name+" with "+str(car_wash2.cars)+" queued\n"+car_wash3.name)
-      print(" with "+str(car_wash3.cars)+" queued\n"+car_wash4.name+" with "+str(car_wash4.cars)+" queued\n")
+      print(car_wash1.get_name()+" with "+str(car_wash1.get_cars())+ " cars queued\n")
+      print(car_wash2.get_name()+" with "+str(car_wash2.get_cars())+" queued\n"+car_wash3.get_name())
+      print(" with "+str(car_wash3.get_cars())+" queued\n"+car_wash4.get_name()+" with "+str(car_wash4.get_cars())+" queued\n")
 if option=="3":
       name=input("Choose a car wash:")
-      if name == car_wash1.name:
+      if name == car_wash1.get_name():
           car_wash1.adding_car()
-      if name == car_wash2.name:
+      if name == car_wash2.get_name():
           car_wash2.adding_car()
-      if name == car_wash3.name:
+      if name == car_wash3.get_name():
           car_wash3.adding_car()
-      if name == car_wash4.name:
+      if name == car_wash4.get_name():
           car_wash3.adding_car()
