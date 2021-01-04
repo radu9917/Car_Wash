@@ -1,6 +1,6 @@
 class Car:
-    def __init__(self, id, number, owner):
-        self.id = id
+    def __init__(self, index, number, owner):
+        self.id = index
         self.number = number
         self.owner = owner
 
@@ -15,8 +15,8 @@ class Car:
         return self.owner
 
     # Setters
-    def set_id(self, id):
-        self.id = id
+    def set_id(self, index):
+        self.id = index
 
     def set_number(self, number):
         self.number = number
