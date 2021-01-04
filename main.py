@@ -19,14 +19,14 @@ def main():
           print(car_wash2.get_name()+" with "+str(car_wash2.get_cars())+" queued\n"+car_wash3.get_name())
           print(" with "+str(car_wash3.get_cars())+" queued\n"+car_wash4.get_name()+" with "+str(car_wash4.get_cars())+" queued\n")
     if option=="3":
-          name=input("Choose a car wash:")
-          if name == car_wash1.get_name():
+          id=input("Choose a car wash:")
+          if id == car_wash1.get_id():
               car_wash1.adding_car()
-          if name == car_wash2.get_name():
+          if id == car_wash2.get_id():
               car_wash2.adding_car()
-          if name == car_wash3.get_name():
+          if id == car_wash3.get_id():
               car_wash3.adding_car()
-          if name == car_wash4.get_name():
+          if id == car_wash4.get_id():
               car_wash3.adding_car()
 
 main()
