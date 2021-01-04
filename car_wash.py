@@ -1,12 +1,12 @@
 
 class CarWash:
-    def __init__(self, index, name, cars):
+    def __init__(self, index, name):
         self.id = index
         self.name = name
-        self.cars = cars
+        self.cars = []
 
-    def adding_car(self):
-        self.cars += 1
+    def add_car(self, car):
+        self.cars.append(car)
 
     # Getters
     def get_id(self):
@@ -27,3 +27,9 @@ class CarWash:
 
     def set_cars(self, cars):
         self.cars = cars
+
+    def __str__(self):
+        cars = ""
+        for car in self.get_cars():
+            cars += str(car)
+        return self.get_name() + " with " + cars + " queued\n"

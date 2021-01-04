@@ -23,3 +23,6 @@ class Car:
 
     def set_owner(self, owner):
         self.owner = owner
+
+    def __str__(self):
+        return self.owner + " -> " + str(self.number)
