@@ -16,38 +16,37 @@ def create_car():
     return Car(index, number, owner)
 
 
-def view_car_wash():
+def view_all_car_wash():
     print(car_wash1)
     print(car_wash2)
     print(car_wash3)
     print(car_wash4)
 
 
-def choose_wash(car1):
+def choose_wash(car):
     index = int(input("Choose a car wash:"))
     if index == car_wash1.get_id():
-        car_wash1.add_car(car1)
+        car_wash1.add_car(car)
     if index == car_wash2.get_id():
-        car_wash2.add_car(car1)
+        car_wash2.add_car(car)
     if index == car_wash3.get_id():
-        car_wash3.add_car(car1)
+        car_wash3.add_car(car)
     if index == car_wash4.get_id():
-        car_wash3.add_car(car1)
+        car_wash3.add_car(car)
 
 
 def main():
-
-    car1 = None
+    car = None
 
     while True:
         option = input("Choose an option:\n 1.Create car \n 2.View Car washes \n 3.Add car in a car wash")
 
         if option == "1":
-           car1 = create_car()
+            car = create_car()
         if option == "2":
-            view_car_wash()
+            view_all_car_wash()
         if option == "3":
-            choose_wash(car1)
+            choose_wash(car)
 
 
 main()
