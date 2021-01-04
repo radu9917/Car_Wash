@@ -1,52 +1,48 @@
 from car_wash import CarWash
 from car import Car
 
-
-car_wash1 = CarWash(1, "At Johnny's")
-car_wash2 = CarWash(2, "Always Clean")
-car_wash3 = CarWash(3, "Wash It")
-car_wash4 = CarWash(4, "Uncle Bob's Car Wash")
+car_wash_list = []
+car = None
 
 
 def create_car():
+    global car
     print("Create car :")
     index = input("Give car index:")
     number = input("Give car number")
     owner = input("Give car owner")
-    return Car(index, number, owner)
+    car = Car(index, number, owner)
 
 
 def view_all_car_wash():
-    print(car_wash1)
-    print(car_wash2)
-    print(car_wash3)
-    print(car_wash4)
+    for car_wash in car_wash_list:
+        print(car_wash)
 
 
-def choose_wash(car):
-    index = int(input("Choose a car wash:"))
-    if index == car_wash1.get_id():
-        car_wash1.add_car(car)
-    if index == car_wash2.get_id():
-        car_wash2.add_car(car)
-    if index == car_wash3.get_id():
-        car_wash3.add_car(car)
-    if index == car_wash4.get_id():
-        car_wash3.add_car(car)
+def choose_wash():
+    choice = int(input("Choose a car wash"))
+    for car_wash in car_wash_list:
+        if choice == car_wash.get_id():
+            car_wash.add_car(car)
 
 
 def main():
-    car = None
-
+    car_wash1 = CarWash(1, "At Johnny's")
+    car_wash2 = CarWash(2, "Always Clean")
+    car_wash3 = CarWash(3, "Wash It")
+    car_wash4 = CarWash(4, "Uncle Bob's Car Wash")
+    car_wash_list.append(car_wash1)
+    car_wash_list.append(car_wash2)
+    car_wash_list.append(car_wash3)
+    car_wash_list.append(car_wash4)
     while True:
         option = input("Choose an option:\n 1.Create car \n 2.View Car washes \n 3.Add car in a car wash")
-
-        if option == "1":
-            car = create_car()
-        if option == "2":
-            view_all_car_wash()
-        if option == "3":
-            choose_wash(car)
+        options = {
+            "1": create_car,
+            "2": view_all_car_wash,
+            "3": choose_wash
+        }
+        options[option]()
 
 
 main()
