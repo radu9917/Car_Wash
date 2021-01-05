@@ -1,5 +1,6 @@
 from car_wash import CarWash
 from car import Car
+import data_check
 
 
 def find_car_wash(car_wash_list):
@@ -13,12 +14,22 @@ def find_car_wash(car_wash_list):
 
 def create_car(car_list=None, car_wash_list=None):
     nr = int(input("How many cars do you want to make?"))
-    for num in range(nr):
-        print("Create car number " + str(num+1))
+    while nr > 0:
+        print("Create car :")
         index = int(input("Give car index:"))
         number = input("Give car number")
-        owner = input("Give car owner")
-        car_list.append(Car(index, number, owner))
+        if data_check.number_check(number):
+            if data_check.check_car_list(car_list, number):
+                owner = input("Give car owner")
+                if data_check.owner_check(owner):
+                    car_list.append(Car(index, number, owner))
+                    nr -= 1
+                else:
+                    print("Wrong Name")
+            else:
+                print("Wrong number")
+        else:
+            print("Wrong number")
 
 
 def show_cars(car_list=None, car_wash_list=None):
@@ -36,9 +47,21 @@ def delete_car(car_list=None, car_wash_list=None):
 
 
 def modify_car(car_list=None, car_wash_list=None):
-    index = int(input("What car do you want to modify?"))
-    owner = input("Give the owner's name")
-    number = input("Give the car's number")
+    correct = False
+    index = int(input("What car do you want to change?"))
+    while not correct:
+        number = input("Give car number")
+        if data_check.number_check(number):
+            if data_check.check_car_list(car_list, number):
+                owner = input("Give car owner")
+                if data_check.owner_check(owner):
+                    correct = True
+                else:
+                    print("Wrong Name")
+            else:
+                print("Wrong number")
+        else:
+            print("Wrong number")
     i = 0
     for car in car_list:
         if car.get_id() == index:
@@ -116,4 +139,3 @@ def main():
 
 
 main()
-
