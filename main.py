@@ -1,11 +1,8 @@
 from car_wash import CarWash
 from car import Car
 
-car_wash_list = []
-car_list = []
 
-
-def create_car():
+def create_car(car_list=None, car_wash_list=None):
 
     nr = int(input("How many cars do you want to make?"))
     for num in range(nr):
@@ -16,12 +13,12 @@ def create_car():
         car_list.append(Car(index, number, owner))
 
 
-def show_cars():
+def show_cars(car_list=None, car_wash_list=None):
     for car in car_list:
         print(car)
 
 
-def delete_car():
+def delete_car(car_list=None, car_wash_list=None):
     index = int(input("What car do you want to delete?"))
     i = 0
     for car in car_list:
@@ -30,7 +27,7 @@ def delete_car():
         i += 1
 
 
-def modify_car():
+def modify_car(car_list=None, car_wash_list=None):
     index = int(input("What car do you want to modify?"))
     owner = input("Give the owner's name")
     number = input("Give the car's number")
@@ -42,12 +39,12 @@ def modify_car():
         i += 1
 
 
-def view_all_car_wash():
+def view_all_car_wash(car_list=None, car_wash_list=None):
     for car_wash in car_wash_list:
         print(car_wash)
 
 
-def view_car_wash():
+def view_car_wash(car_list=None, car_wash_list=None):
     choice = int(input("Choose a car wash"))
     i = 0
     for car_wash in car_wash_list:
@@ -56,7 +53,7 @@ def view_car_wash():
         i += 1
 
 
-def rename_car_wash():
+def rename_car_wash(car_list=None, car_wash_list=None):
     choice = int(input("Choose a car wash to rename:"))
     name = input("Choose the name for the car wash")
     for car_wash in car_wash_list:
@@ -64,7 +61,7 @@ def rename_car_wash():
             car_wash.set_name(name)
 
 
-def add_to_car_wash():
+def add_to_car_wash(car_list=None, car_wash_list=None):
     choice1 = int(input("Choose a car wash"))
     choice2 = int(input("Choose the car you want to be added"))
     for car_wash in car_wash_list:
@@ -74,7 +71,7 @@ def add_to_car_wash():
                     car_wash.add_car(car)
 
 
-def remove_from_car_wash():
+def remove_from_car_wash(car_list=None, car_wash_list=None):
     choice1 = int(input("Choose a car wash"))
     choice2 = int(input("Choose a car"))
     for car_wash in car_wash_list:
@@ -86,9 +83,9 @@ def remove_from_car_wash():
                 j += 1
 
 
-
 def main():
-
+    car_wash_list = []
+    car_list = []
     car_wash1 = CarWash(1, "At Johnny's")
     car_wash2 = CarWash(2, "Always Clean")
     car_wash3 = CarWash(3, "Wash It")
@@ -113,7 +110,8 @@ def main():
             "8": view_car_wash,
             "9": show_cars
         }
-        menu[option]()
+        menu[option](car_list, car_wash_list)
 
 
 main()
+

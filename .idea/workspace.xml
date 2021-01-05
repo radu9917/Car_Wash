@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3fafc3a0-ddb8-4485-8c4f-eb9683be143f" name="Default Changelist" comment="Updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_wash.py" beforeDir="false" afterPath="$PROJECT_DIR$/car_wash.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609769686865</updated>
       <workItem from="1609769696401" duration="12694000" />
-      <workItem from="1609842738416" duration="1909000" />
+      <workItem from="1609842738416" duration="7677000" />
     </task>
     <task id="LOCAL-00001" summary="Created main.py">
       <created>1609770035677</created>
@@ -175,7 +174,28 @@
       <option name="project" value="LOCAL" />
       <updated>1609782297719</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="New menu options">
+      <created>1609845546226</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609845546226</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update">
+      <created>1609849518453</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1609849518453</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update">
+      <created>1609850099610</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1609850099610</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,9 +220,11 @@
     <MESSAGE value="updated" />
     <MESSAGE value="Code refactoring" />
     <MESSAGE value="Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated" />
+    <MESSAGE value="New menu options" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Car_Wash$main.coverage" NAME="main Coverage Results" MODIFIED="1609782254469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Car_Wash$main.coverage" NAME="main Coverage Results" MODIFIED="1609850436384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
