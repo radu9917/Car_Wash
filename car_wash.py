@@ -8,8 +8,8 @@ class CarWash:
     def add_car(self, car):
         self.cars.append(car)
 
-    def remove_car(self):
-        self.cars.pop(0)
+    def remove_car(self, car):
+        self.cars.pop(car)
 
     # Getters
     def get_id(self):

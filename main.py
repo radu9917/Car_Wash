@@ -76,9 +76,15 @@ def add_to_car_wash():
 
 def remove_from_car_wash():
     choice1 = int(input("Choose a car wash"))
+    choice2 = int(input("Choose a car"))
     for car_wash in car_wash_list:
         if choice1 == car_wash.get_id():
-            car_wash.remove_car()
+            j = 0
+            for car in car_wash.cars:
+                if car.get_id() == choice2:
+                    car_wash.remove_car(j)
+                j += 1
+
 
 
 def main():
