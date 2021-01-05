@@ -2,8 +2,16 @@ from car_wash import CarWash
 from car import Car
 
 
-def create_car(car_list=None, car_wash_list=None):
+def find_car_wash(car_wash_list):
+    j = 0
+    choice1 = int(input())
+    for car_wash in car_wash_list:
+        if choice1 == car_wash.get_id():
+            return j
+        j += 1
 
+
+def create_car(car_list=None, car_wash_list=None):
     nr = int(input("How many cars do you want to make?"))
     for num in range(nr):
         print("Create car number " + str(num+1))
@@ -45,30 +53,24 @@ def view_all_car_wash(car_list=None, car_wash_list=None):
 
 
 def view_car_wash(car_list=None, car_wash_list=None):
-    choice = int(input("Choose a car wash"))
-    i = 0
-    for car_wash in car_wash_list:
-        if choice == car_wash.get_id():
-            print(car_wash_list[i])
-        i += 1
+    print("Choose a car wash")
+    print(car_wash_list[find_car_wash(car_wash_list)])
 
 
 def rename_car_wash(car_list=None, car_wash_list=None):
-    choice = int(input("Choose a car wash to rename:"))
+    print("Choose a car wash to rename:")
+    j = find_car_wash(car_wash_list)
     name = input("Choose the name for the car wash")
-    for car_wash in car_wash_list:
-        if choice == car_wash.get_id():
-            car_wash.set_name(name)
+    car_wash_list[j].set_name(name)
 
 
 def add_to_car_wash(car_list=None, car_wash_list=None):
-    choice1 = int(input("Choose a car wash"))
     choice2 = int(input("Choose the car you want to be added"))
-    for car_wash in car_wash_list:
-        if choice1 == car_wash.get_id():
-            for car in car_list:
-                if choice2 == car.get_id():
-                    car_wash.add_car(car)
+    print("Choose a car wash")
+    j = find_car_wash(car_wash_list)
+    for car in car_list:
+        if choice2 == car.get_id():
+            car_wash_list[j].add_car(car)
 
 
 def remove_from_car_wash(car_list=None, car_wash_list=None):
