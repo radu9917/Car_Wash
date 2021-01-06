@@ -5,9 +5,9 @@ from repository.repo_car_wash import RepoCarWash
 from repository.filerepo_car import FileCarRepo
 from tests.test_main import test_main
 
-car_wash_repo1 = RepoCarWash()
-car_repo1 = FileCarRepo("cars.txt")
-service = Service(car_repo1, car_wash_repo1)
+car_wash_repo = RepoCarWash()
+car_repo = FileCarRepo("cars.txt")
+service = Service(car_repo, car_wash_repo)
 
 
 def create_car():
