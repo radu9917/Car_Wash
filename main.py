@@ -33,7 +33,8 @@ def create_car(car_wash_list=None):
 
 
 def show_cars(car_wash_list=None):
-    return car_repo.find_all()
+    for index in len(car_repo.find_all):
+        print(car_repo.get(index))
 
 
 def delete_car(car_wash_list=None):
@@ -47,7 +48,7 @@ def modify_car(car_wash_list=None):
     while not correct:
         number = input("Give car number")
         if data_check.number_check(number):
-            if data_check.check_car_list(car_repo.find_all, number):
+            if data_check.check_car_list(car_repo.find_all(), number):
                 owner = input("Give car owner")
                 correct = True
 
@@ -77,12 +78,10 @@ def rename_car_wash(car_wash_list=None):
 
 
 def add_to_car_wash(car_wash_list=None):
-    choice2 = int(input("Choose the car you want to be added"))
+    choice = int(input("Choose the car you want to be added"))
     print("Choose a car wash")
     j = find_car_wash(car_wash_list)
-    for car in car_repo.find_all():
-        if choice2 == car.get_id():
-            car_wash_list[j].add_car(car)
+    car_wash_list[j].add_car(car_repo.get(choice))
 
 
 def remove_from_car_wash(car_wash_list=None):
