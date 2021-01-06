@@ -1,10 +1,10 @@
 from domain.car_wash import CarWash
 from domain.car import Car
-from repository.repo_car import RepoCar
 from repository.repo_car_wash import RepoCarWash
+from repository.filerepo_car import FileCarRepo
 import data_check
 car_wash_repo = RepoCarWash()
-car_repo = RepoCar()
+car_repo = FileCarRepo("cars.txt")
 
 
 def create_car():
@@ -95,7 +95,7 @@ def main():
     while True:
         print("Choose an option:\n1.Create car \n2.Delete car \n3.Modify car")
         print("4.View all car washes\n5.Rename car wash\n6.Add a car to a car wash")
-        print("7.Remove a car from a car wash\n8.View car wash\n9.Show cars")
+        print("7.Remove a car from a car wash\n8.View car wash\n9.Show cars\n10.Exit")
         option = input()
         menu = {
             "1": create_car,
@@ -106,9 +106,13 @@ def main():
             "6": add_to_car_wash,
             "7": remove_from_car_wash,
             "8": view_car_wash,
-            "9": show_cars
+            "9": show_cars,
+            "10": exit
         }
         menu[option]()
 
 
 main()
+
+
+

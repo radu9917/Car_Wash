@@ -3,26 +3,26 @@ from repository.repo_interface import RepoInterface
 
 class RepoCar(RepoInterface):
     def __init__(self):
-        self.__list = []
+        self._list = []
 
     def get_all(self):
-        return self.__list
+        return self._list
 
     def store(self, obj):
-        self.__list.append(obj)
+        self._list.append(obj)
 
     def get(self, obj_id):
-        for car in self.__list:
+        for car in self._list:
             if car.get_id() == obj_id:
                 return car
 
     def update(self, old_object, new_object):
-        for car in self.__list:
+        for car in self._list:
             if car.get_id() == old_object:
                 car.set_owner(new_object.get_owner())
                 car.set_number(new_object.get_number())
 
     def delete(self, obj_id):
-        for car in self.__list:
+        for car in self._list:
             if car.get_id() == obj_id:
-                self.__list.remove(car)
+                self._list.remove(car)
