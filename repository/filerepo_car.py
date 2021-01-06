@@ -32,7 +32,7 @@ class FileCarRepo(RepoCar):
         for line in lines:
 
             obj = line.split(",")
-            index = obj[0]
+            index = int(obj[0])
             number = obj[1]
             name = obj[2].strip("\n")
             self._list.append(Car(index, number, name))

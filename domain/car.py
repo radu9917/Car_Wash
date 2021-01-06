@@ -26,3 +26,12 @@ class Car:
 
     def __str__(self):
         return self.__owner + " -> " + str(self.__number)
+
+    def __eq__(self, other):
+        if self.__id != other.get_id():
+            return False
+        if self.__owner != other.get_owner():
+            return False
+        if self.__number != other.get_number():
+            return False
+        return True

@@ -3,6 +3,7 @@ from domain.car import Car
 from repository.repo_car import RepoCar
 from repository.repo_car_wash import RepoCarWash
 from repository.filerepo_car import FileCarRepo
+from tests.test_main import test_main
 import data_check
 car_wash_repo = RepoCarWash()
 car_repo = FileCarRepo("cars.txt")
@@ -112,8 +113,9 @@ def main():
         }
         menu[option]()
 
-
+test_main()
 main()
+
 
 
 

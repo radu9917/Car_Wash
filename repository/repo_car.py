@@ -19,10 +19,11 @@ class RepoCar(RepoInterface):
     def update(self, old_object, new_object):
         for car in self._list:
             if car.get_id() == old_object:
+                car.set_id(new_object.get_id())
                 car.set_owner(new_object.get_owner())
                 car.set_number(new_object.get_number())
 
     def delete(self, obj_id):
         for car in self._list:
-            if int(car.get_id()) == obj_id:
+            if car.get_id() == obj_id:
                 self._list.remove(car)

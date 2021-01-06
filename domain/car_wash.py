@@ -36,3 +36,8 @@ class CarWash:
         for car in self.get_cars():
             cars += str(car)
         return self.get_name() + " with " + cars + " queued\n"
+
+    def __eq__(self, other):
+        if self.__name == other.get_name():
+            return True
+        return False
