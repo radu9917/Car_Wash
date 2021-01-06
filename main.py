@@ -33,7 +33,7 @@ def create_car(car_wash_list=None):
 
 
 def show_cars(car_wash_list=None):
-    for index in len(car_repo.find_all()):
+    for index in range(len(car_repo.find_all())):
         print(car_repo.get(index))
 
 
