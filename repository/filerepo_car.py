@@ -21,7 +21,7 @@ class FileCarRepo(RepoCar):
         self.__store_to_file()
 
     def __store_to_file(self):
-        file = open(self.__file_name, "w")
+        file = open(self.__file_name, "w+")
         for obj in self._list:
             file.write(str(obj.get_id()) + "," + obj.get_number() + "," + obj.get_owner() + "\n")
         file.close()

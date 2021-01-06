@@ -24,5 +24,5 @@ class RepoCar(RepoInterface):
 
     def delete(self, obj_id):
         for car in self._list:
-            if car.get_id() == obj_id:
+            if int(car.get_id()) == obj_id:
                 self._list.remove(car)

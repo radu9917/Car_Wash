@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fafc3a0-ddb8-4485-8c4f-eb9683be143f" name="Default Changelist" comment="Updated">
-      <change afterPath="$PROJECT_DIR$/repository/filerepo_car.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/repo_car.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository/repo_car.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +94,7 @@
       <updated>1609769686865</updated>
       <workItem from="1609769696401" duration="12694000" />
       <workItem from="1609842738416" duration="14823000" />
-      <workItem from="1609919914754" duration="13814000" />
+      <workItem from="1609919914754" duration="14260000" />
     </task>
     <task id="LOCAL-00001" summary="Created main.py">
       <created>1609770035677</created>
@@ -281,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609927487952</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Update">
+      <created>1609934023208</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1609934023208</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +319,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Car_Wash$main.coverage" NAME="main Coverage Results" MODIFIED="1609933745149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Car_Wash$main.coverage" NAME="main Coverage Results" MODIFIED="1609934068160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
