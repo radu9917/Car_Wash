@@ -9,7 +9,7 @@ class CarWash:
         self.__cars.append(car)
 
     def remove_car(self, car):
-        self.__cars.pop(car)
+        self.__cars.remove(car)
 
     # Getters
     def get_id(self):
