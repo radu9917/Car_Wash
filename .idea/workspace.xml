@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fafc3a0-ddb8-4485-8c4f-eb9683be143f" name="Default Changelist" comment="Updated">
-      <change afterPath="$PROJECT_DIR$/data_check.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -89,7 +89,8 @@
       <option name="presentableId" value="Default" />
       <updated>1609769686865</updated>
       <workItem from="1609769696401" duration="12694000" />
-      <workItem from="1609842738416" duration="11716000" />
+      <workItem from="1609842738416" duration="14823000" />
+      <workItem from="1609919914754" duration="2255000" />
     </task>
     <task id="LOCAL-00001" summary="Created main.py">
       <created>1609770035677</created>
@@ -210,7 +211,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609852526706</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Functions for checking data added">
+      <created>1609855847907</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1609855847907</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update">
+      <created>1609856800332</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1609856800332</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,11 +251,12 @@
     <MESSAGE value="Code refactoring" />
     <MESSAGE value="Updated" />
     <MESSAGE value="New menu options" />
-    <MESSAGE value="update" />
     <MESSAGE value="no more global variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="no more global variables" />
+    <MESSAGE value="Functions for checking data added" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Car_Wash$main.coverage" NAME="main Coverage Results" MODIFIED="1609853608490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Car_Wash$main.coverage" NAME="main Coverage Results" MODIFIED="1609922159082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

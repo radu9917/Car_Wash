@@ -1,6 +1,9 @@
 from car_wash import CarWash
 from car import Car
+from repo import  Repo
 import data_check
+
+car_repo = Repo()
 
 
 def find_car_wash(car_wash_list):
@@ -12,91 +15,77 @@ def find_car_wash(car_wash_list):
         j += 1
 
 
-def create_car(car_list=None, car_wash_list=None):
+def create_car(car_wash_list=None):
     nr = int(input("How many cars do you want to make?"))
     while nr > 0:
         print("Create car :")
         index = int(input("Give car index:"))
         number = input("Give car number")
         if data_check.number_check(number):
-            if data_check.check_car_list(car_list, number):
+            if data_check.check_car_list(car_repo.find_all(), number):
                 owner = input("Give car owner")
-                if data_check.owner_check(owner):
-                    car_list.append(Car(index, number, owner))
-                    nr -= 1
-                else:
-                    print("Wrong Name")
+                car_repo.store(Car(index, number, owner))
+                nr -= 1
             else:
                 print("Wrong number")
         else:
             print("Wrong number")
 
 
-def show_cars(car_list=None, car_wash_list=None):
-    for car in car_list:
-        print(car)
+def show_cars(car_wash_list=None):
+    return car_repo.find_all()
 
 
-def delete_car(car_list=None, car_wash_list=None):
+def delete_car(car_wash_list=None):
     index = int(input("What car do you want to delete?"))
-    i = 0
-    for car in car_list:
-        if car.get_id() == index:
-            car_list.pop(i)
-        i += 1
+    car_repo.delete(index)
 
 
-def modify_car(car_list=None, car_wash_list=None):
+def modify_car(car_wash_list=None):
     correct = False
     index = int(input("What car do you want to change?"))
     while not correct:
         number = input("Give car number")
         if data_check.number_check(number):
-            if data_check.check_car_list(car_list, number):
+            if data_check.check_car_list(car_repo.find_all, number):
                 owner = input("Give car owner")
-                if data_check.owner_check(owner):
-                    correct = True
-                else:
-                    print("Wrong Name")
+                correct = True
+
             else:
                 print("Wrong number")
         else:
             print("Wrong number")
-    i = 0
-    for car in car_list:
-        if car.get_id() == index:
-            car_list[i].set_number(number)
-            car_list[i].set_owner(owner)
-        i += 1
+    car = Car(1, number, owner)
+    car_repo.update(index, car)
 
 
-def view_all_car_wash(car_list=None, car_wash_list=None):
+def view_all_car_wash(car_wash_list=None):
     for car_wash in car_wash_list:
         print(car_wash)
 
 
-def view_car_wash(car_list=None, car_wash_list=None):
+def view_car_wash(car_wash_list=None):
     print("Choose a car wash")
     print(car_wash_list[find_car_wash(car_wash_list)])
 
 
-def rename_car_wash(car_list=None, car_wash_list=None):
+def rename_car_wash(car_wash_list=None):
     print("Choose a car wash to rename:")
     j = find_car_wash(car_wash_list)
     name = input("Choose the name for the car wash")
     car_wash_list[j].set_name(name)
 
 
-def add_to_car_wash(car_list=None, car_wash_list=None):
+def add_to_car_wash(car_wash_list=None):
     choice2 = int(input("Choose the car you want to be added"))
     print("Choose a car wash")
     j = find_car_wash(car_wash_list)
-    for car in car_list:
+    for car in car_repo.find_all():
         if choice2 == car.get_id():
             car_wash_list[j].add_car(car)
 
 
-def remove_from_car_wash(car_list=None, car_wash_list=None):
+def remove_from_car_wash(car_wash_list=None):
     choice1 = int(input("Choose a car wash"))
     choice2 = int(input("Choose a car"))
     for car_wash in car_wash_list:
@@ -135,7 +124,7 @@ def main():
             "8": view_car_wash,
             "9": show_cars
         }
-        menu[option](car_list, car_wash_list)
+        menu[option](car_wash_list)
 
 
 main()

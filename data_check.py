@@ -1,6 +1,3 @@
-from car import Car
-
-
 def number_check(name):
     if name.upper() != name:
         return False
@@ -12,14 +9,7 @@ def number_check(name):
             return False
     if not check_name[2].isalpha():
         return False
-    if check_name[3]:
-        return False
     return True
-
-
-def owner_check(name):
-    if not name.title():
-        return False
 
 
 def check_car_list(car_list, number):
