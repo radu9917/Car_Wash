@@ -25,4 +25,4 @@ class Car:
         self.__owner = owner
 
     def __str__(self):
-        return self.__owner + " -> " + str(self.number)
+        return self.__owner + " -> " + str(self.__number)
