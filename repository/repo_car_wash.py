@@ -18,8 +18,10 @@ class RepoCarWash(RepoInterface):
 
     def update(self, old_object, new_object):
         for car_wash in self.__list:
-            if car_wash.get_id() == old_object:
+            if car_wash == old_object:
+                car_wash.set_id(new_object.get_id())
                 car_wash.set_name(new_object.get_name())
+                car_wash.set_cars(new_object.get_cars())
 
     def delete(self, obj_id):
         for car_wash in self.__list:

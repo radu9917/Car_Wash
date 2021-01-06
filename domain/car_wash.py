@@ -38,6 +38,10 @@ class CarWash:
         return self.get_name() + " with " + cars + " queued\n"
 
     def __eq__(self, other):
-        if self.__name == other.get_name():
-            return True
-        return False
+        if self.__name != other.get_name():
+            return False
+        if self.__id != other.get_id():
+            return False
+        if self.__cars != other.get_cars():
+            return False
+        return True
