@@ -17,8 +17,8 @@ class FileCarWashRepo(RepoCarWash):
         super().delete(obj_id)
         self.__store_to_file()
 
-    def update(self, old_object, new_object):
-        super().update(old_object, new_object)
+    def update(self, new_object):
+        super().update(new_object)
         self.__store_to_file()
 
     def __store_to_file(self):

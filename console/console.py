@@ -12,12 +12,11 @@ class Console:
         nr = int(input("How many cars do you want to make?"))
         while nr > 0:
             print("Create car :")
-            index = int(input("Give car index:"))
+            index = input("Give car index:")
             number = input("Give car number:")
             owner = input("Give car owner:")
-            car = Car(index, number, owner)
             try:
-                self.__service.create_car(car)
+                self.__service.create_car(Car(int(index), number, owner))
                 nr -= 1
                 print(font_colors.OKGREEN + "Car successfully added" + font_colors.ENDC)
             except ValidationError as exp:
@@ -29,9 +28,8 @@ class Console:
             print("Create car wash:")
             index = int(input("Give index:"))
             name = input("Give name:")
-            car_wash = CarWash(index, name)
             try:
-                self.__service.create_car_wash(car_wash)
+                self.__service.create_car_wash(CarWash(index, name))
                 nr -= 1
                 print(font_colors.OKGREEN + "Car successfully added" + font_colors.ENDC)
             except ValidationError as exp:
@@ -39,7 +37,11 @@ class Console:
 
     def delete_car_wash(self):
         index = int(input("Choose a car wash to delete"))
-        self.__service.delete_car_wash(index)
+        try:
+            self.__service.delete_car_wash(index)
+            print(font_colors.OKGREEN + "Car wash successfully deleted" + font_colors.ENDC)
+        except ValidationError as exp:
+            print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
     def show_cars(self):
         for car in self.__service.get_all_car():
@@ -47,7 +49,11 @@ class Console:
 
     def delete_car(self):
         index = int(input("What car do you want to delete?"))
-        self.__service.delete_car(index)
+        try:
+            self.__service.delete_car(index)
+            print(font_colors.OKGREEN + "Car successfully deleted" + font_colors.ENDC)
+        except ValidationError as exp:
+            print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
     def modify_car(self):
         correct = False
@@ -58,7 +64,7 @@ class Console:
             owner = input("Give car owner")
             car = Car(index, number, owner)
             try:
-                self.__service.modify_car(car)
+                self.__service.modify_car(index, car)
                 print(font_colors.OKGREEN + "Car successfully modified" + font_colors.ENDC)
                 correct = True
             except ValidationError as exp:
@@ -70,7 +76,13 @@ class Console:
 
     def view_car_wash(self):
         choice = int(input("Choose a car wash"))
-        print(self.__service.get_car_wash(choice))
+        correct = False
+        while not correct:
+            try:
+                print(self.__service.get_car_wash(choice))
+                correct = True
+            except ValidationError as exp:
+                print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
     def modify_car_wash(self):
         correct = False
@@ -81,57 +93,83 @@ class Console:
             try:
                 self.__service.modify_car_wash(car_wash)
                 correct = True
-                print(font_colors.OKGREEN + "Car succsesfully modified" + font_colors.ENDC)
+                print(font_colors.OKGREEN + "Car wash successfully modified" + font_colors.ENDC)
             except ValidationError as exp:
                 print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
-
-
     def add_to_car_wash(self):
-        choice1 = int(input("Choose a car wash"))
-        choice2 = int(input("Choose the car you want to be added"))
-        self.__service.add_to_car_wash(choice1, choice2)
+
+        correct = False
+        while not correct:
+            try:
+                choice1 = int(input("Choose a car wash"))
+                choice2 = int(input("Choose the car you want to be added"))
+                self.__service.add_to_car_wash(choice1, choice2)
+                correct = True
+                print(font_colors.OKGREEN + "Car successfully added to car wash"+ font_colors.ENDC)
+            except ValidationError as exp:
+                print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
     def remove_from_car_wash(self):
-        choice1 = int(input("Choose a car wash"))
-        choice2 = int(input("Choose a car"))
-        self.__service.remove_from_car_wash(choice1, choice2)
+
+        correct = False
+        while not correct:
+            try:
+                choice1 = int(input("Choose a car wash"))
+                choice2 = int(input("Choose a car"))
+                self.__service.remove_from_car_wash(choice1, choice2)
+                correct = True
+                print(font_colors.OKGREEN + "Car removed from car wash successfully" + font_colors.ENDC )
+            except ValidationError as exp:
+                print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
     def car_options(self):
-        opt = input("1.Create car\n2.Delete car\n3.Modify car\n4.Show cars")
-        options = {
-            "1": self.create_car,
-            "2": self.delete_car,
-            "3": self.modify_car,
-            "4": self.show_cars,
-            "5": exit
-        }
-        options[opt]()
+        try:
+            opt = int(input("1.Create car\n2.Delete car\n3.Modify car\n4.Show cars"))
+            self.__service.test_input(opt, 5)
+            options = {
+                "1": self.create_car,
+                "2": self.delete_car,
+                "3": self.modify_car,
+                "4": self.show_cars,
+            }
+            options[opt]()
+        except ValidationError as exp:
+            print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
+
 
     def car_wash_options(self):
         print("1.Create car wash\n2.Delete car wash\n3.Modify car wash\n4.Show all car washes")
-        opt = input("5.Show a specified car wash\n6.Add car to a car wash\n7.Remove a car from a car wash")
-        options = {
-            "1": self.create_car_wash,
-            "2": self.delete_car_wash,
-            "3": self.modify_car_wash,
-            "4": self.view_all_car_wash,
-            "5": self.view_car_wash,
-            "6": self.add_to_car_wash,
-            "7": self.remove_from_car_wash,
-            "8": exit
-        }
-        options[opt]()
+        try:
+            opt = input("5.Show a specified car wash\n6.Add car to a car wash\n7.Remove a car from a car wash")
+            self.__service.test_input(opt, 7)
+            options = {
+                "1": self.create_car_wash,
+                "2": self.delete_car_wash,
+                "3": self.modify_car_wash,
+                "4": self.view_all_car_wash,
+                "5": self.view_car_wash,
+                "6": self.add_to_car_wash,
+                "7": self.remove_from_car_wash,
+            }
+            options[opt]()
+
+        except ValidationError as exp:
+            print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
+
 
     def run(self):
         while True:
-            print("Choose an option:\n1.Car options \n2.Car wash options \n3.Exit")
+            try:
+                print("Choose an option:\n1.Car options \n2.Car wash options \n3.Exit")
+                option = input()
+                self.__service.test_input(option, 3)
+                menu = {
+                    "1": self.car_options,
+                    "2": self.car_wash_options,
+                    "3": exit
 
-            option = input()
-            menu = {
-                "1": self.car_options,
-                "2": self.car_wash_options,
-                "3": exit
-
-            }
-            menu[option]()
+                }
+                menu[option]()
+            except ValidationError as exp:
+                print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
