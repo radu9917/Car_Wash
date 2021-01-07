@@ -25,8 +25,14 @@ class Service:
             return True
         return False
 
+    def create_car_wash(self, car_wash):
+        self.__car_wash_repo.store(car_wash)
+
     def delete_car(self, index):
         self.__car_repo.delete(index)
+
+    def delete(self, index):
+        self.__car_wash_repo.delete(index)
 
     def modify_car(self, car):
         if self.validate_car(car):
@@ -34,7 +40,7 @@ class Service:
             return True
         return False
 
-    def rename_car_wash(self, car_wash):
+    def modify_car_wash(self, car_wash):
         self.__car_wash_repo.update(car_wash)
 
     def add_to_car_wash(self, car_wash_id, car_id):
