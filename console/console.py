@@ -16,7 +16,7 @@ class Console:
             number = input("Give car number:")
             owner = input("Give car owner:")
             try:
-                self.__service.create_car(Car(int(index), number, owner))
+                self.__service.create_car(Car(index, number, owner))
                 nr -= 1
                 print(font_colors.OKGREEN + "Car successfully added" + font_colors.ENDC)
             except ValidationError as exp:
@@ -125,8 +125,8 @@ class Console:
 
     def car_options(self):
         try:
-            opt = int(input("1.Create car\n2.Delete car\n3.Modify car\n4.Show cars"))
-            self.__service.test_input(opt, 5)
+            opt = input("1.Create car\n2.Delete car\n3.Modify car\n4.Show cars")
+            self.__service.test_input(opt, 4)
             options = {
                 "1": self.create_car,
                 "2": self.delete_car,
