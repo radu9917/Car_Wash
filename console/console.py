@@ -1,5 +1,7 @@
 from domain.car_wash import CarWash
 from domain.car import Car
+from validator.exceptions import ValidationError
+from console.colors import font_colors
 
 
 class Console:
@@ -14,10 +16,12 @@ class Console:
             number = input("Give car number:")
             owner = input("Give car owner:")
             car = Car(index, number, owner)
-            if self.__service.create_car(car):
+            try:
+                self.__service.create_car(car)
                 nr -= 1
-            else:
-                print("Invalid Data")
+                print(font_colors.OKGREEN + "Car successfully added" + font_colors.ENDC)
+            except ValidationError as exp:
+                print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
     def create_car_wash(self):
         nr = int(input("How many car washes do you wan to create"))
@@ -26,8 +30,12 @@ class Console:
             index = int(input("Give index:"))
             name = input("Give name:")
             car_wash = CarWash(index, name)
-            self.__service.create_car_wash(car_wash)
-            nr -= 1
+            try:
+                self.__service.create_car_wash(car_wash)
+                nr -= 1
+                print(font_colors.OKGREEN + "Car successfully added" + font_colors.ENDC)
+            except ValidationError as exp:
+                print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
     def delete_car_wash(self):
         index = int(input("Choose a car wash to delete"))
@@ -49,10 +57,12 @@ class Console:
             number = input("Give car number")
             owner = input("Give car owner")
             car = Car(index, number, owner)
-            if self.__service.modify_car(car):
+            try:
+                self.__service.modify_car(car)
+                print(font_colors.OKGREEN + "Car successfully modified" + font_colors.ENDC)
                 correct = True
-            else:
-                print("Invalid Data")
+            except ValidationError as exp:
+                print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
     def view_all_car_wash(self):
         for car_wash in self.__service.get_all_car_wash():
@@ -63,11 +73,19 @@ class Console:
         print(self.__service.get_car_wash(choice))
 
     def modify_car_wash(self):
+        correct = False
+        while not correct:
+            j = int(input("Choose a car wash to rename:"))
+            name = input("Choose the name for the car wash")
+            car_wash = CarWash(j, name)
+            try:
+                self.__service.modify_car_wash(car_wash)
+                correct = True
+                print(font_colors.OKGREEN + "Car succsesfully modified" + font_colors.ENDC)
+            except ValidationError as exp:
+                print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
-        j = int(input("Choose a car wash to rename:"))
-        name = input("Choose the name for the car wash")
-        car_wash = CarWash(j, name)
-        self.__service.modify_car_wash(car_wash)
+
 
     def add_to_car_wash(self):
         choice1 = int(input("Choose a car wash"))

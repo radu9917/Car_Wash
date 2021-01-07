@@ -1,31 +1,16 @@
-from data_check import number_check
-from data_check import check_car_list
-
 
 class Service:
-    def __init__(self, car_repo, car_wash_repo):
+    def __init__(self, car_repo, car_wash_repo, validator):
         self.__car_repo = car_repo
         self.__car_wash_repo = car_wash_repo
-
-    def add_car_wash(self,car_wash):
-        self.__car_wash_repo.store(car_wash)
-
-    def validate_car(self, car):
-        car_list = self.__car_repo.get_all()
-        if not check_car_list(car_list, car.get_number()):
-            return False
-        if not number_check(car.get_number()):
-            return False
-
-        return True
+        self.__validator = validator
 
     def create_car(self, car):
-        if self.validate_car(car):
-            self.__car_repo.store(car)
-            return True
-        return False
+        self.__validator.validate_car(car)
+        self.__car_repo.store(car)
 
     def create_car_wash(self, car_wash):
+        self.__validator.validate_car_wash(car_wash)
         self.__car_wash_repo.store(car_wash)
 
     def delete_car(self, index):
@@ -35,10 +20,8 @@ class Service:
         self.__car_wash_repo.delete(index)
 
     def modify_car(self, car):
-        if self.validate_car(car):
-            self.__car_repo.update(car.get_id())
-            return True
-        return False
+        self.__validator.validate_car(car)
+        self.__car_repo.update(car)
 
     def modify_car_wash(self, car_wash):
         self.__car_wash_repo.update(car_wash)
