@@ -1,4 +1,4 @@
 6;Don's;1,AG 67 DMG,Dan;
-1;Radu's;4,AG 60 DUM,Dumi;4,AG 60 DUM,Dumi;
+1;Dude's;
 2;LA GEANI;
 3;d;
