@@ -19,3 +19,30 @@ def test_car_wash_setters():
     assert car_wash.get_id() == 2
     assert car_wash.get_name() == "IAN"
 
+
+def test_car_wash_str():
+    car_wash1 = CarWash(1, "Bob")
+    car_wash2 = CarWash(1, "Bob")
+    car1 = Car(1, "AG 67 NIG", "Ion")
+    car_wash1.add_car(car1)
+    car_wash2.add_car(car1)
+    assert str(car_wash1) == str(car_wash2)
+
+
+def test_car_wash_eq():
+    car_wash1 = CarWash(1, "Bob")
+    car_wash2 = CarWash(1, "Bobul")
+    car_wash3 = CarWash(1, "Bob")
+    car_wash4 = CarWash(2, "Bob")
+    car1 = Car(1, "AG 67 NIG", "Ion")
+    car_wash3.add_car(car1)
+    assert not car_wash1 == car_wash2
+    assert not car_wash1 == car_wash3
+    assert not car_wash1 == car_wash4
+
+
+def test_car_wash():
+    test_car_wash_eq()
+    test_car_wash_str()
+    test_car_wash_getters()
+    test_car_wash_setters()

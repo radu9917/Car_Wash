@@ -4,6 +4,7 @@ from domain.car_wash import CarWash
 from repository.repo_car import RepoCar
 from validator.exceptions import ValidationError
 
+
 def test_validation():
     validator = Validator()
     car1 = Car(1, "ag 12 BOB", "Dan")

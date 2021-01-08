@@ -16,4 +16,4 @@ def main():
 
 
 test_main()
-# main()
+main()
