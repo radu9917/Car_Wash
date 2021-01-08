@@ -1,0 +1,21 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "number": "AG 26 NUT",
+      "owner": "Radu"
+    },
+    {
+      "id": 2,
+      "number": "B 320 YIT",
+      "owner": "Alex"
+    }
+  ],
+  "car_wash": [
+    {
+      "id": 1,
+      "name": "La Nelu",
+      "cars": [1 , 2]
+    }
+  ]
+}

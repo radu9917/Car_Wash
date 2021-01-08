@@ -76,13 +76,10 @@ class Console:
 
     def view_car_wash(self):
         choice = int(input("Choose a car wash"))
-        correct = False
-        while not correct:
-            try:
-                print(self.__service.get_car_wash(choice))
-                correct = True
-            except ValidationError as exp:
-                print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
+        try:
+            print(self.__service.get_car_wash(choice))
+        except ValidationError as exp:
+            print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
     def modify_car_wash(self):
         correct = False
@@ -111,17 +108,13 @@ class Console:
                 print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
     def remove_from_car_wash(self):
-
-        correct = False
-        while not correct:
-            try:
-                choice1 = int(input("Choose a car wash"))
-                choice2 = int(input("Choose a car"))
-                self.__service.remove_from_car_wash(choice1, choice2)
-                correct = True
-                print(font_colors.OKGREEN + "Car removed from car wash successfully" + font_colors.ENDC )
-            except ValidationError as exp:
-                print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
+        try:
+            choice1 = int(input("Choose a car wash"))
+            choice2 = int(input("Choose a car"))
+            self.__service.remove_from_car_wash(choice1, choice2)
+            print(font_colors.OKGREEN + "Car removed from car wash successfully" + font_colors.ENDC )
+        except ValidationError as exp:
+            print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
     def filter_car_by_number(self):
         st = input("Filter by number:")
@@ -177,7 +170,6 @@ class Console:
 
         except ValidationError as exp:
             print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
-
 
     def run(self):
         while True:
