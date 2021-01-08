@@ -14,8 +14,7 @@ class Validator:
         if not check_name[0].isalpha():
             raise ValidationError("First part is not alpha")
         if not check_name[1].isdecimal():
-            if 3 < len(check_name[1]) < 2:
-                raise ValidationError("Second part is not decimal")
+            raise ValidationError("Second part is not decimal")
         if not check_name[2].isalpha():
             raise ValidationError("Third part is not alpha")
         owner = car.get_owner().replace("-", " ")

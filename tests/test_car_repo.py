@@ -13,3 +13,4 @@ def car_repo_test():
     car_list.store(car1)
     car_list.delete(2)
     assert car_list.get_all() == [car1]
+    assert car_list.get(2) == car1
