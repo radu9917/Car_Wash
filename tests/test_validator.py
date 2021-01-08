@@ -74,7 +74,7 @@ def test_validation():
     car_list.store(car1)
 
     try:
-        validator.id_find(car_list, 6)
+        validator.id_find(car_list.get_all(), 6)
         assert False
     except ValidationError:
         assert True
@@ -83,7 +83,7 @@ def test_validation():
     car_list.store(car2)
 
     try:
-        validator.id_check(car_list, 2)
+        validator.id_check(car_list.get_all(), 2)
         assert False
     except ValidationError:
         assert True

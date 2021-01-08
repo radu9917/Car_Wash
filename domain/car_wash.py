@@ -1,20 +1,21 @@
+from domain.entity import Entity
 
-class CarWash:
+
+class CarWash(Entity):
     def __init__(self, index, name):
-        self.__id = index
+        super().__init__(index)
         self.__name = name
         self.__cars = []
 
     def add_car(self, car):
+        int(car)
         self.__cars.append(car)
 
     def remove_car(self, car):
+        int(car)
         self.__cars.remove(car)
 
     # Getters
-    def get_id(self):
-        return self.__id
-
     def get_name(self):
         return self.__name
 
@@ -22,9 +23,6 @@ class CarWash:
         return self.__cars
 
     # Setters
-    def set_id(self, index):
-        self.__id = index
-
     def set_name(self, name):
         self.__name = name
 
@@ -33,9 +31,10 @@ class CarWash:
 
     def __str__(self):
         cars = ""
+        nr = 0
         for car in self.get_cars():
-            cars += str(car)
-        return self.get_name() + " with " + cars + " queued\n"
+            nr += 1
+        return self.get_name() + " with " + str(nr) + " cars queued\n"
 
     def __eq__(self, other):
         if self.__name != other.get_name():

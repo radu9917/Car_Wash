@@ -30,7 +30,6 @@ class FileCarRepo(RepoCar):
         file = open(self.__file_name, "r")
         lines = file.readlines()
         for line in lines:
-
             obj = line.split(",")
             index = int(obj[0])
             number = obj[1]

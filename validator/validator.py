@@ -31,7 +31,7 @@ class Validator:
 
     def id_find(self, c_list, index):
         found = False
-        for c in c_list.get_all():
+        for c in c_list:
             if index == int(c.get_id()):
                 found = True
         if not found:
@@ -39,7 +39,7 @@ class Validator:
 
     def id_check(self, c_list, index):
         found = False
-        for c in c_list.get_all():
+        for c in c_list:
             if int(index) == int(c.get_id()):
                 found = True
         if found:
@@ -48,3 +48,10 @@ class Validator:
     def option_check(self, opt, max):
         if not opt.isdecimal() or int(opt) > int(max):
             raise ValidationError("Invalid option")
+
+    def validate_filter_string(self, st):
+        if st[0] ==  ' ':
+            raise ValidationError("Number starts with a whitespace")
+        if not st.isalnum():
+            raise ValidationError("Number is not alphanumeric")
+

@@ -44,8 +44,8 @@ def test_functions():
     service.create_car(car1)
     service.add_to_car_wash(1, 1)
     car_wash2 = service.get_car_wash(1)
-    assert car_wash2.get_cars() == [car1]
-    service.remove_from_car_wash(1, 1)
+    assert car_wash2.get_cars() == [car1.get_id()]
+    service.remove_from_car_wash(car_wash1.get_id(), car1.get_id())
     car_wash2 = service.get_car_wash(1)
     assert car_wash2.get_cars() == []
     file2 = open("test_car_wash.txt", "w")

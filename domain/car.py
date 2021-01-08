@@ -1,13 +1,13 @@
-class Car:
+from domain.entity import Entity
+
+
+class Car(Entity):
     def __init__(self, index, number, owner):
-        self.__id = index
+        super().__init__(index)
         self.__number = number
         self.__owner = owner
 
     # Getters
-    def get_id(self):
-        return self.__id
-
     def get_number(self):
         return self.__number
 
@@ -15,9 +15,6 @@ class Car:
         return self.__owner
 
     # Setters
-    def set_id(self, index):
-        self.__id = index
-
     def set_number(self, number):
         self.__number = number
 

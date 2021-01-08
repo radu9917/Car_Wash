@@ -123,26 +123,46 @@ class Console:
             except ValidationError as exp:
                 print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
+    def filter_car_by_number(self):
+        st = input("Filter by number:")
+        try:
+            car_list = self.__service.filter_by_number(st)
+            if len(car_list) == 0:
+                print(font_colors.FAIL + "No car was found" + font_colors.ENDC)
+            else:
+                for car in car_list:
+                    print(font_colors.OKBLUE + str(car) + font_colors.ENDC)
+        except ValidationError as exp:
+            print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
+
+    def show_cars_in_car_wash(self):
+        car_wash = int(input("What car wash do you want to view?"))
+        car_list = self.__service.get_cars_in_car_wash(car_wash)
+        for car in car_list:
+            print(car)
+
     def car_options(self):
         try:
-            opt = input("1.Create car\n2.Delete car\n3.Modify car\n4.Show cars")
-            self.__service.test_input(opt, 4)
+            opt = input("1.Create car\n2.Delete car\n3.Modify car\n4.Show cars\n5.Filter cars")
+            self.__service.test_input(opt, 5)
             options = {
                 "1": self.create_car,
                 "2": self.delete_car,
                 "3": self.modify_car,
                 "4": self.show_cars,
+                "5": self.filter_car_by_number
             }
             options[opt]()
         except ValidationError as exp:
             print(font_colors.FAIL + "An error has occured: " + str(exp) + font_colors.ENDC)
 
-
     def car_wash_options(self):
         print("1.Create car wash\n2.Delete car wash\n3.Modify car wash\n4.Show all car washes")
+        print("5.Show a specified car wash\n6.Add car to a car wash\n7.Remove a car from a car wash")
+        print("8.Show cars in a car wash")
         try:
-            opt = input("5.Show a specified car wash\n6.Add car to a car wash\n7.Remove a car from a car wash")
-            self.__service.test_input(opt, 7)
+            opt = input()
+            self.__service.test_input(opt, 8)
             options = {
                 "1": self.create_car_wash,
                 "2": self.delete_car_wash,
@@ -151,6 +171,7 @@ class Console:
                 "5": self.view_car_wash,
                 "6": self.add_to_car_wash,
                 "7": self.remove_from_car_wash,
+                "8": self.show_cars_in_car_wash
             }
             options[opt]()
 

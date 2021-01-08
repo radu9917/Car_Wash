@@ -10,7 +10,7 @@ def test_load():
     car = Car(1, "AG 67 DYC", "Radu")
     car_wash = CarWash(1, "La Bob")
     car_repo.store(car)
-    car_wash.add_car(car)
+    car_wash.add_car(car.get_id())
     car_wash_repo.store(car_wash)
     test_car_repo = FileCarRepo("test_car.txt")
     test_car_wash_repo = FileCarWashRepo("test_car_wash.txt")
