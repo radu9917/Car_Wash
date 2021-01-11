@@ -1,7 +1,6 @@
 from service.service import Service
 from tests.test_main import test_main
 from console.console import Console
-from validator.validator import Validator
 from factory.factory import Factory
 
 

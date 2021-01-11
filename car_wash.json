@@ -14,6 +14,11 @@
             "id": 4,
             "number": "AG 76 DUD",
             "owner": "Dan"
+        },
+        {
+            "id": 5,
+            "number": "AG 76 BOB",
+            "owner": "Nig"
         }
     ],
     "car_wash": [
