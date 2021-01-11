@@ -26,7 +26,6 @@ class JsonRepoCarWash(RepoCarWash):
         json_file = json.loads(file.read())
         car_washes = []
 
-
         for obj in self._list:
             id_car_wash = obj.get_id()
             name = obj.get_name()

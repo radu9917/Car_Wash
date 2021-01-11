@@ -5,6 +5,7 @@ from tests.test_car_wash_repo import test_car_wash_repo
 from tests.test_validator import test_validation
 from tests.test_service import test_functions
 from tests.test_filerepo import test_load
+from tests.test_json import test_json
 
 
 def test_main():
@@ -22,4 +23,5 @@ def test_main():
     test_functions()
     # TEST FILE LOAD
     test_load()
-
+    # TEST JSON
+    test_json()

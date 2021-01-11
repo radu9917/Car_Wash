@@ -43,6 +43,8 @@ def test_functions():
     service.create_car_wash(car_wash1)
     service.create_car(car1)
     service.add_to_car_wash(1, 1)
+    assert service.get_cars_in_car_wash(1)
+    assert service.filter_by_number("AG")
     car_wash2 = service.get_car_wash(1)
     assert car_wash2.get_cars() == [car1.get_id()]
     service.remove_from_car_wash(car_wash1.get_id(), car1.get_id())

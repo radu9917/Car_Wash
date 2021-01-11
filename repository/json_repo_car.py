@@ -43,7 +43,7 @@ class JsonRepoCar(RepoCar):
                 "car_wash": car_washes
             }
         else:
-            clist ={
+            clist = {
                 "car": car
             }
         file.close()
