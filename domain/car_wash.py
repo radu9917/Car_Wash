@@ -39,7 +39,7 @@ class CarWash(Entity):
     def __eq__(self, other):
         if self.__name != other.get_name():
             return False
-        if self.__id != int(other.get_id()):
+        if self.get_id() != int(other.get_id()):
             return False
         if self.__cars != other.get_cars():
             return False

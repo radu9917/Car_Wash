@@ -1,21 +1,36 @@
 {
-  "cars": [
-    {
-      "id": 1,
-      "number": "AG 26 NUT",
-      "owner": "Radu"
-    },
-    {
-      "id": 2,
-      "number": "B 320 YIT",
-      "owner": "Alex"
-    }
-  ],
-  "car_wash": [
-    {
-      "id": 1,
-      "name": "La Nelu",
-      "cars": [1 , 2]
-    }
-  ]
+    "car": [
+        {
+            "id": 1,
+            "number": "AG 67 UDB",
+            "owner": "NIG"
+        },
+        {
+            "id": 2,
+            "number": "AG 78 IMD",
+            "owner": "Radu"
+        },
+        {
+            "id": 4,
+            "number": "AG 76 DUD",
+            "owner": "Dan"
+        }
+    ],
+    "car_wash": [
+        {
+            "id": 1,
+            "name": "La bob",
+            "cars": [
+                1,
+                4
+            ]
+        },
+        {
+            "id": 2,
+            "name": "La Hatzul",
+            "cars": [
+                2
+            ]
+        }
+    ]
 }

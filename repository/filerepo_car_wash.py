@@ -1,6 +1,5 @@
 from repository.repo_car_wash import RepoCarWash
 from domain.car_wash import CarWash
-from domain.car import Car
 
 
 class FileCarWashRepo(RepoCarWash):

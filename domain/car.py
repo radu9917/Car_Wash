@@ -25,7 +25,7 @@ class Car(Entity):
         return self.__owner + " -> " + str(self.__number)
 
     def __eq__(self, other):
-        if self.__id != other.get_id():
+        if self.get_id() != other.get_id():
             return False
         if self.__owner != other.get_owner():
             return False
