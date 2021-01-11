@@ -9,8 +9,7 @@ def main():
     factory = Factory.get_instance()
     car_wash_repo = factory.create_car_wash_repo("json", "car_wash.json")
     car_repo = factory.create_car_repo("json", "car_wash.json")
-    validator = Validator()
-    service = Service(car_repo, car_wash_repo, validator)
+    service = Service(car_repo, car_wash_repo)
     console = Console(service)
     console.run()
 

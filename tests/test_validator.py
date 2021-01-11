@@ -6,7 +6,7 @@ from validator.exceptions import ValidationError
 
 
 def test_validation():
-    validator = Validator()
+    validator = Validator.get_instance()
     car1 = Car(1, "ag 12 BOB", "Dan")
     car3 = Car(":", "A", "Ian")
     car4 = Car(4, "A", "Ian")

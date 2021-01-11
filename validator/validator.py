@@ -2,6 +2,18 @@ from validator.exceptions import ValidationError
 
 
 class Validator:
+    __instance = None
+    @staticmethod
+    def get_instance():
+        if not Validator.__instance:
+            Validator()
+        return Validator.__instance
+
+    def __init__(self):
+        if Validator.__instance:
+            raise Exception("Instance already created")
+        Validator.__instance = self
+
     def validate_car(self, car):
         if not str(car.get_id()).isdecimal():
             raise ValidationError("Index is not valid")

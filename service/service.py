@@ -1,9 +1,10 @@
+from validator.validator import Validator
 
 class Service:
-    def __init__(self, car_repo, car_wash_repo, validator):
+    def __init__(self, car_repo, car_wash_repo):
         self.__car_repo = car_repo
         self.__car_wash_repo = car_wash_repo
-        self.__validator = validator
+        self.__validator = Validator.get_instance()
 
     def create_car(self, car):
         self.__validator.validate_car(car)

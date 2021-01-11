@@ -10,8 +10,7 @@ from validator.exceptions import ValidationError
 def test_functions():
     repo_car = FileCarRepo("test_car.txt")
     repo_car_wash = FileCarWashRepo("test_car_wash.txt")
-    validator = Validator()
-    service = Service(repo_car, repo_car_wash, validator)
+    service = Service(repo_car, repo_car_wash)
     # TEST CAR FUNCTIONS
     car1 = Car(1, "AG 25 DMG", "Ian")
     service.create_car(car1)
