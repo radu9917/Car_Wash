@@ -5,12 +5,5 @@
             "number": "AG 69 COC",
             "owner": "Sorin"
         }
-    ],
-    "car_wash": [
-        {
-            "id": 1,
-            "name": "La Daniel",
-            "cars": []
-        }
     ]
 }

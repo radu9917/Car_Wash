@@ -37,8 +37,7 @@ class JsonRepoCarWash(RepoCarWash):
             }
             car_washes.append(car_wash)
         if "car" in json_file:
-            if "car" in json_file:
-                car = json_file["car"]
+            car = json_file["car"]
             clist = {
                 "car": car,
                 "car_wash": car_washes
