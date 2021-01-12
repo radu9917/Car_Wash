@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fafc3a0-ddb8-4485-8c4f-eb9683be143f" name="Default Changelist" comment="Updated">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/observer/car_observer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/observer/observer_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +112,8 @@
       <workItem from="1610002857992" duration="26993000" />
       <workItem from="1610041795506" duration="789000" />
       <workItem from="1610089837917" duration="20196000" />
-      <workItem from="1610349159534" duration="26956000" />
+      <workItem from="1610349159534" duration="27231000" />
+      <workItem from="1610456771091" duration="2887000" />
     </task>
     <task id="LOCAL-00001" summary="Created main.py">
       <created>1609770035677</created>
@@ -441,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610379654268</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="updated">
+      <created>1610379980465</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1610379980465</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,11 +490,11 @@
     <MESSAGE value="Update" />
     <MESSAGE value="Finished tests" />
     <MESSAGE value="Added new options" />
-    <MESSAGE value="updated" />
     <MESSAGE value="Created Json data file" />
     <MESSAGE value="Updated tests" />
     <MESSAGE value="Created factory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created factory" />
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Car_Wash$main.coverage" NAME="main Coverage Results" MODIFIED="1610379484619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

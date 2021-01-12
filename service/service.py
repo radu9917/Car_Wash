@@ -1,4 +1,7 @@
 from validator.validator import Validator
+from observer.car_observer import ObservedCar
+from observer.car_observer import CarObserver
+
 
 class Service:
     def __init__(self, car_repo, car_wash_repo):
@@ -20,6 +23,9 @@ class Service:
 
     def delete_car(self, index):
         self.__validator.id_find(self.__car_repo.get_all(), index)
+        observed_car = ObservedCar(index)
+        self.create_observer_list(observed_car)
+        observed_car.notify()
         self.__car_repo.delete(index)
 
     def delete_car_wash(self, index):
@@ -78,3 +84,7 @@ class Service:
         for car_id in car_wash.get_cars():
             cars.append(self.__car_repo.get(car_id))
         return cars
+
+    def create_observer_list(self, observed_car):
+        for car_wash in self.__car_wash_repo.get_all():
+            observed_car.add_observer(CarObserver(observed_car, car_wash))
