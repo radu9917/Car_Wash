@@ -1,9 +1,11 @@
 from domain.entity import Entity
+from observer.observer_interface import  Observable
 
 
-class Car(Entity):
+class Car(Entity, Observable):
     def __init__(self, index, number, owner):
-        super().__init__(index)
+        Entity.__init__(self, index)
+        Observable.__init__(self)
         self.__number = number
         self.__owner = owner
 
@@ -32,3 +34,8 @@ class Car(Entity):
         if self.__number != other.get_number():
             return False
         return True
+
+    def notify(self):
+        if not self.get_observers() is None:
+            for car_wash in self.get_observers():
+                car_wash.update(self.get_id())

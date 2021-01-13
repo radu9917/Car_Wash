@@ -1,24 +1,9 @@
 {
     "car": [
         {
-            "id": 1,
-            "number": "AG 67 UDB",
-            "owner": "NIG"
-        },
-        {
-            "id": 2,
-            "number": "AG 78 IMD",
-            "owner": "Radu"
-        },
-        {
-            "id": 4,
-            "number": "AG 76 DUD",
-            "owner": "Dan"
-        },
-        {
             "id": 5,
-            "number": "AG 76 BOB",
-            "owner": "Nig"
+            "number": "AG 67 NDS",
+            "owner": "Dan"
         }
     ],
     "car_wash": [
@@ -26,16 +11,13 @@
             "id": 1,
             "name": "La bob",
             "cars": [
-                1,
-                4
+                5
             ]
         },
         {
             "id": 2,
             "name": "La Hatzul",
-            "cars": [
-                2
-            ]
+            "cars": []
         }
     ]
 }

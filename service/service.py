@@ -1,6 +1,4 @@
 from validator.validator import Validator
-from observer.car_observer import ObservedCar
-from observer.car_observer import CarObserver
 
 
 class Service:
@@ -8,6 +6,7 @@ class Service:
         self.__car_repo = car_repo
         self.__car_wash_repo = car_wash_repo
         self.__validator = Validator.get_instance()
+        self.observe()
 
     def create_car(self, car):
         self.__validator.validate_car(car)
@@ -23,10 +22,8 @@ class Service:
 
     def delete_car(self, index):
         self.__validator.id_find(self.__car_repo.get_all(), index)
-        observed_car = ObservedCar(index)
-        self.create_observer_list(observed_car)
-        observed_car.notify()
         self.__car_repo.delete(index)
+        self.update_file()
 
     def delete_car_wash(self, index):
         self.__validator.id_find(self.__car_wash_repo.get_all(), index)
@@ -35,19 +32,20 @@ class Service:
     def modify_car(self, id, car):
         self.__validator.id_find(self.__car_repo.get_all(), car.get_id())
         self.__validator.validate_car(car)
-        self.__car_repo.update(id, car)
+        self.__car_repo.modify(id, car)
 
     def modify_car_wash(self, car_wash):
         self.__validator.id_find(self.__car_wash_repo.get_all(), car_wash.get_id())
         self.__validator.validate_car_wash(car_wash)
-        self.__car_wash_repo.update(car_wash)
+        self.__car_wash_repo.modify(car_wash)
 
     def add_to_car_wash(self, car_wash_id, car_id):
         self.__validator.id_find(self.__car_repo.get_all(), car_id)
         self.__validator.id_find(self.__car_wash_repo.get_all(), car_wash_id)
         car_wash = self.__car_wash_repo.get(car_wash_id)
         car_wash.add_car(car_id)
-        self.__car_wash_repo.update(car_wash)
+        self.__car_repo.get(car_id).add_observer(self.__car_wash_repo.get(car_wash_id))
+        self.__car_wash_repo.modify(car_wash)
 
     def get_car_wash(self, index):
         return self.__car_wash_repo.get(index)
@@ -58,7 +56,7 @@ class Service:
         self.__validator.id_find(self.__car_repo.get_all(), car_id)
         self.__validator.id_find(self.__car_wash_repo.get_all(), car_wash_id)
         car_wash.remove_car(car.get_id())
-        self.__car_wash_repo.update(car_wash)
+        self.__car_wash_repo.modify(car_wash)
 
     def get_all_car_wash(self):
         return self.__car_wash_repo.get_all()
@@ -85,6 +83,11 @@ class Service:
             cars.append(self.__car_repo.get(car_id))
         return cars
 
-    def create_observer_list(self, observed_car):
+    def observe(self):
+        for car in self.__car_repo.get_all():
+            for car_wash in self.__car_wash_repo.get_all():
+                car.add_observer(car_wash)
+
+    def update_file(self):
         for car_wash in self.__car_wash_repo.get_all():
-            observed_car.add_observer(CarObserver(observed_car, car_wash))
+            self.__car_wash_repo.modify(car_wash)

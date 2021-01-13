@@ -8,7 +8,7 @@ class RepoInterface:
     def get(self, obj_id):
         pass
 
-    def update(self, old_object, new_object):
+    def modify(self, old_object, new_object):
         pass
 
     def delete(self, obj_id):

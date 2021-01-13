@@ -1,16 +1,18 @@
 class Observable:
     def __init__(self):
-        self.observers = []
+        self.__observers = []
 
     def add_observer(self, observer):
-        self.observers.append(observer)
+        self.__observers.append(observer)
 
     def remove_observer(self, observer):
-        self.observers.remove(observer)
+        self.__observers.remove(observer)
 
     def notify(self):
-        for observer in self.observers:
-            observer.update()
+        pass
+
+    def get_observers(self):
+        return self.__observers
 
 
 class Observer:

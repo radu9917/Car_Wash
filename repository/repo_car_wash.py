@@ -16,9 +16,9 @@ class RepoCarWash(RepoInterface):
             if car_wash.get_id() == obj_id:
                 return car_wash
 
-    def update(self, new_object):
+    def modify(self, new_object):
         for car_wash in self._list:
-            if car_wash.get_id() == new_object.get_id():
+            if int(car_wash.get_id()) == int(new_object.get_id()):
                 car_wash.set_id(new_object.get_id())
                 car_wash.set_name(new_object.get_name())
                 car_wash.set_cars(new_object.get_cars())

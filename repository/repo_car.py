@@ -16,7 +16,7 @@ class RepoCar(RepoInterface):
             if car.get_id() == obj_id:
                 return car
 
-    def update(self, old_object, new_object):
+    def modify(self, old_object, new_object):
         for car in self._list:
             if car.get_id() == old_object:
                 car.set_id(new_object.get_id())
@@ -27,3 +27,4 @@ class RepoCar(RepoInterface):
         for car in self._list:
             if car.get_id() == obj_id:
                 self._list.remove(car)
+                car.notify()

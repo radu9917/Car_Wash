@@ -1,9 +1,11 @@
 from domain.entity import Entity
+from observer.observer_interface import Observer
 
 
-class CarWash(Entity):
+class CarWash(Entity, Observer):
     def __init__(self, index, name):
-        super().__init__(index)
+        Entity.__init__(self, index)
+        Observer.__init__(self)
         self.__name = name
         self.__cars = []
 
@@ -14,6 +16,11 @@ class CarWash(Entity):
     def remove_car(self, car):
         int(car)
         self.__cars.remove(car)
+
+    def update(self, subject):
+        for car in self.__cars:
+            if car == int(subject):
+                self.remove_car(subject)
 
     # Getters
     def get_name(self):

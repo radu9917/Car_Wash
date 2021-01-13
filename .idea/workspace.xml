@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fafc3a0-ddb8-4485-8c4f-eb9683be143f" name="Default Changelist" comment="Updated">
-      <change afterPath="$PROJECT_DIR$/observer/car_observer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/observer/observer_interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car_wash.json" beforeDir="false" afterPath="$PROJECT_DIR$/car_wash.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/observer/car_observer.py" beforeDir="false" afterPath="$PROJECT_DIR$/observer/car_observer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/observer/observer_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/observer/observer_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/repo_car_wash.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository/repo_car_wash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_car.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test_car.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_car_wash.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test_car_wash.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +118,8 @@
       <workItem from="1610041795506" duration="789000" />
       <workItem from="1610089837917" duration="20196000" />
       <workItem from="1610349159534" duration="27231000" />
-      <workItem from="1610456771091" duration="2887000" />
+      <workItem from="1610456771091" duration="11911000" />
+      <workItem from="1610522455182" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="Created main.py">
       <created>1609770035677</created>
@@ -451,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610379980465</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Created observer">
+      <created>1610467947124</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1610467947124</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,9 +507,10 @@
     <MESSAGE value="Updated tests" />
     <MESSAGE value="Created factory" />
     <MESSAGE value="updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated" />
+    <MESSAGE value="Created observer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created observer" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Car_Wash$main.coverage" NAME="main Coverage Results" MODIFIED="1610379484619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Car_Wash$main.coverage" NAME="main Coverage Results" MODIFIED="1610473850761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
