@@ -1,20 +1,16 @@
-from service.service import Service
-from tests.test_main import test_main
-from console.console import Console
-from factory.factory import Factory
+# This Python file uses the following encoding: utf-8
+import sys
+import os
+
+from PySide2.QtGui import QGuiApplication
+from PySide2.QtQml import QQmlApplicationEngine
 
 
-def main():
-    factory = Factory.get_instance()
-    car_wash_repo = factory.create_car_wash_repo("json", "car_wash.json")
-    car_repo = factory.create_car_repo("json", "car_wash.json")
-    service = Service(car_repo, car_wash_repo)
-    console = Console(service)
-    console.run()
+if __name__ == "__main__":
+    app = QGuiApplication(sys.argv)
+    engine = QQmlApplicationEngine()
+    engine.load(os.path.join(os.path.dirname(__file__), "main.qml"))
 
-
-test_main()
-main()
-
-
-
+    if not engine.rootObjects():
+        sys.exit(-1)
+    sys.exit(app.exec_())

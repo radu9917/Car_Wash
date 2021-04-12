@@ -1,0 +1,43 @@
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+
+Item {
+    id:root
+    signal carAdd()
+    signal carDelete()
+    signal carUpdate()
+    width:400
+    height:1000
+
+    Button {
+        id: button
+        x: 8
+        y: 8
+        text: qsTr("add car")
+        onPressed: carAdd()
+    }
+
+    Button {
+        id: button1
+        x: 150
+        y: 8
+        text: qsTr("delete car")
+        onPressed: carDelete()
+    }
+
+    Button {
+        id: button2
+        x: 292
+        y: 8
+        text: qsTr("update car")
+        onPressed: carUpdate()
+    }
+
+    ListView {
+        id: listView
+        anchors.fill: parent
+        anchors.topMargin: 83
+        model: model
+        delegate: CarDelegate{}
+    }
+}

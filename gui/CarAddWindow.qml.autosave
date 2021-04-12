@@ -1,0 +1,60 @@
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+
+Item {
+    id:root
+    width:1000
+    height:1000
+    
+    Rectangle {
+        id: rectangle
+        color: "#ffffff"
+        anchors.fill: parent
+        
+        Label {
+            id: ownerLabel
+            x: 75
+            y: 81
+            text: "Car owner :"
+            font.pointSize: 15
+        }
+        
+        TextField {
+            id: ownerInput
+            x: 210
+            y: 73
+            placeholderText: ""
+        }
+        
+        Label {
+            id: numberLabel
+            x: 506
+            y: 81
+            text: "Car Number:"
+            font.pointSize: 15
+        }
+        
+        TextField {
+            id: numberInput
+            x: 650
+            y: 73
+            placeholderText: ""
+        }
+        
+        Button {
+            id: button
+            x: 210
+            y: 164
+            text: "Create"
+        }
+        
+        Button {
+            id: button1
+            x: 650
+            y: 164
+            width: 123
+            height: 40
+            text: "Cancel"
+        }
+    }
+}
